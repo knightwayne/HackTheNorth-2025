@@ -1,0 +1,2 @@
+Change Ecommerce MVC Node js project in Projects section to 
+Python based MVC Project, using Flask, React UI, and PostgrezSQL, minimal changes to all other Projects
