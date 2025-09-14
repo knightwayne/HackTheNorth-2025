@@ -10,7 +10,7 @@ TaiLOR takes an existing resume and, along with a job description you supply, tw
 
 ## How I built it
 - **Backend:** Node.js with Express.js
-- **AI Integration:** OpenAI API and Martian API to route across multiple AI models
+- **AI Integration:** Martian API to route across multiple AI models
 - **PDF Compilation:** `pdflatex` for `.tex` to PDF conversion
 - **Frontend:** In-browser live editing and viewing of `.tex` and `.pdf` files
 - **Design/Prototype:** Warp AI
@@ -39,13 +39,7 @@ TaiLOR/
 
 - **Tech Stack :**
 
-Tech Stack: Node.js + Express.js backend, OpenAI & Martian API for AI, pdflatex for PDF compilation, HTML/CSS/JS frontend.
-
-## Accomplishments I’m proud of
-I solo’ed the project in 14 hours. Successfully integrated multiple AI models for real-time resume improvement. Built an in-browser live editing and PDF preview interface.
-
-## What I learned
-First time building an AI agent tool. Learned practical prompt engineering, automation, and dependency management. Hands-on experience connecting backend `.tex` generation with live frontend PDF viewing.
+Tech Stack: Node.js + Express.js backend, Martian API & OpenAI for AI, pdflatex for PDF compilation, HTML/CSS/JS frontend.
 
 ## What’s next for TaiLOR
 - Allow sending fragmented sections of resumes to AI models to save time/resources.
@@ -61,7 +55,8 @@ npm install
 ```
 Create a `.env` file with your API keys:
 ```
-OPENAI_API_KEY=your_openai_key
+MARTIAN_API_KEY=your_martianAPI_key
+
 ```
 Start the server:
 ```
