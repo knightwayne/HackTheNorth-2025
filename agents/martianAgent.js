@@ -9,18 +9,19 @@ const MARTIAN_API_URL = "https://api.withmartian.com/v1/chat/completions";
 export async function updateResumeTech(resumeTex, jobDesc) {
   // Shorten the section if needed
   const prompt = `
-Update only the technical/framework part of the projects in the .tex LaTeX files based 
-on the job description, keeping all other text intact. Return only the .tex content Minimal changes overall, dont touch what isnt asked.
-Change from original eg. (C#, ASP.NET) to (MERN stack) or (Python+MySQL) as asked.
+edit all projects and work experience in Resume to match with the tech stack in Job_Desc, dont change latex .tex format, 
+Just give .tex code, no auxillary information, start with /documentclass as your response,
+and end with \end{document}, no latex and code block formatting
+
 Resume: """${resumeTex}"""
-Job Description: """${jobDesc}"""
+Job_Desc: """${jobDesc}"""
 `;
 
   try {
     const response = await axios.post(
       MARTIAN_API_URL,
       {
-        model: "openai/gpt-4.1-nano",
+        model: "martian/code",
         messages: [{ role: "user", content: prompt }],
       },
       {

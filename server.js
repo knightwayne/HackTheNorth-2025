@@ -1,4 +1,3 @@
-// server.js
 import express from "express";
 import fs from "fs";
 import path from "path";
@@ -31,38 +30,49 @@ app.get("/", (req, res) => {
 <head>
   <title>Resume Generator</title>
   <style>
-    body { font-family: Arial; margin: 20px; }
-    .container { display: flex; gap: 20px; flex-wrap: wrap; }
-    .box { flex: 1; min-width: 400px; display: flex; flex-direction: column; gap: 10px; }
-    textarea { width: 100%; height: 200px; font-family: monospace; font-size: 14px; padding: 10px; }
-    embed { width: 100%; height: 400px; border: 1px solid #ccc; }
-    .btn { padding: 10px; cursor: pointer; margin-top: 5px; }
-    h2 { margin-bottom: 5px; }
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; color: #333; }
+    h1 { text-align: center; color: #2c3e50; }
+    h2 { margin-bottom: 5px; color: #34495e; }
+    .container { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .box { flex: 1; min-width: 400px; display: flex; flex-direction: column; gap: 10px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    textarea { width: 100%; height: 200px; font-family: monospace; font-size: 14px; padding: 10px; border: 1px solid #ccc; border-radius: 5px; resize: vertical; }
+    embed { width: 100%; height: 400px; border: 1px solid #ccc; border-radius: 5px; }
+    .btn { padding: 10px; cursor: pointer; margin-top: 5px; border: none; border-radius: 5px; background-color: #3498db; color: #fff; transition: background 0.3s; }
+    .btn:hover { background-color: #2980b9; }
+    #jobSection { margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    #jobDesc { height: 120px; }
+    .button-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 5px; }
   </style>
 </head>
 <body>
 <h1>Resume Generator</h1>
 
-<div>
+<div id="jobSection">
   <h2>Job Description</h2>
   <textarea id="jobDesc" placeholder="Enter job description here..."></textarea>
-  <button class="btn" onclick="generateOutputTex()">Generate Output TEX</button>
+  <div class="button-group">
+    <button class="btn" onclick="generateOutputTex()">Generate Output TEX</button>
+  </div>
 </div>
 
 <div class="container">
   <div class="box">
     <h2>Input TEX</h2>
     <textarea id="inputTex"></textarea>
-    <button class="btn" onclick="compileInputPdf()">Compile Input PDF</button>
-    <button class="btn" onclick="showInputPdf()">Show Input PDF</button>
+    <div class="button-group">
+      <button class="btn" onclick="compileInputPdf()">Compile Input PDF</button>
+      <button class="btn" onclick="showInputPdf()">Show Input PDF</button>
+    </div>
     <embed id="inputPdf" type="application/pdf">
   </div>
 
   <div class="box">
     <h2>Output TEX</h2>
     <textarea id="outputTex"></textarea>
-    <button class="btn" onclick="compileOutputPdf()">Compile Output PDF</button>
-    <button class="btn" onclick="showOutputPdf()">Show Output PDF</button>
+    <div class="button-group">
+      <button class="btn" onclick="compileOutputPdf()">Compile Output PDF</button>
+      <button class="btn" onclick="showOutputPdf()">Show Output PDF</button>
+    </div>
     <embed id="outputPdf" type="application/pdf">
   </div>
 </div>
@@ -114,10 +124,10 @@ async function compileOutputPdf(){
 }
 
 function showInputPdf(){
-  document.getElementById('inputPdf').src = '/pdf/input.pdf';
+  document.getElementById('inputPdf').src = '/pdf/input.pdf?' + Date.now();
 }
 function showOutputPdf(){
-  document.getElementById('outputPdf').src = '/pdf/output.pdf';
+  document.getElementById('outputPdf').src = '/pdf/output.pdf?' + Date.now();
 }
 
 // initial load
