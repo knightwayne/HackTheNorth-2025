@@ -1,4 +1,4 @@
-# TaiLOR – AI Resume Tailoring Tool
+# T*ai*LOR – AI Resume Tailoring Tool
 
 ![TaiLOR Screenshot](./proj3.png)
 
