@@ -1,0 +1,2 @@
+Convert all projects except CryptoPrediciton ML model  to show proficiency in Python, Flask and PostgreSQL only and related tech stack
+remove mention of other technologies or framwork

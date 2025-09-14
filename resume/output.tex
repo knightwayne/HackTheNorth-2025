@@ -1,32 +1,127 @@
-% \resumeSubHeadingListStart
-\documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{geometry}
-\geometry{margin=1in}
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{ifthen}
+\usepackage{setspace} 
+\usepackage{multicol}
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{publications.bib}
+\usepackage{needspace}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!90!black,  
+    urlcolor=blue!75!black,    
+    citecolor=blue!60!black 
+}
+
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-5pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat{\subsection}{\vspace{-4pt}\scshape\raggedright\large}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeItemL}[1]{\item\small{{#1 \vspace{-5pt}}}}
+
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}}
+
+\newcommand{\resumeSubheadingT}[4]{\vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}}
+
+\newcommand{\resumeSubheadingM}[5]{\vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{$\quad$ -\small #5} \\
+    \end{tabular*}\vspace{-4pt}}
+
+\newcommand{\resumeProjectHeading}[2]{\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-4pt}}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlength{\footskip}{4.08003pt}
 
 \begin{document}
 
-\vspace{0.5em}
-\resumeSubheadingT
-{\textbf{Open Source Software Developer}}{Remote}{VideoLAN Org./Google Summer of Code}{Jun 2020 -- Sep 2020}
+\resumeSubHeadingListStart  % Start the main list
+
+% Fleurish project
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/HackTheNorth-2024}{\underline{\textbf{Fleurish}}} | Python, Flask, PostgreSQL}{}
 \resumeItemListStart
-\resumeItem{Selected among $9000+$ applicants (\textbf{$\sim$13.4\%}) in GSoC 2020 Open Source program; Made VLC Media Player accessible via remote command line access or Android apps (MPDroid), contributions merged upstream.}
-\resumeItem{Developed a \textbf{multi-threaded} MPD server as an OS level control module in \textbf{Java} using \textbf{JDBC} and \textbf{MySQL} to handle \textbf{100+} client requests over a local network.}
-\resumeItem{Integrated the server with core \textbf{VLC API} to enable \textbf{remote queries} for playback control and media management.}
-\resumeItem{Reduced network latency by \textbf{$\sim$ 40\%} through optimized Java network handling and performed unit tests to ensure robustness.}
+\resumeItem{Developed a real-time video processing application using Python and Flask backend, integrating OpenCV for live video feed manipulation, and storing data in PostgreSQL.}
+\resumeItem{Implemented asynchronous video frame processing with Flask, enabling concurrent user sessions and reducing latency; demonstrated at Hack The North 2024 with 30+ users simultaneously.}
 \resumeItemListEnd
 
-\vspace{0.5em}
-\resumeSubheadingT
-{\textbf{Software Engineering Intern}}{Bangalore, India}{Samsung R\&D Institute}{Jan 2020 -- Jun 2020}
+% ShopNode project
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/Ecommerce-Website}{\underline{\textbf{ShopNode}}} | Python, Flask, PostgreSQL}{}
 \resumeItemListStart
-\resumeItem{Developed \textbf{network logger} tool for codebase migration from \textit{3.95G} to \textit{4G} using \textbf{Java} and \textbf{JDBC} with \textbf{MySQL} backend; created \textbf{automation scripts} for \textbf{85+} network simulations for \textbf{real-time monitoring} of metrics like SNR, latency \& packet loss.}
-\resumeItem{Reduced simulation time by implementing parallel processing in Java and multi-core support, speeding up checks by \textbf{25\%}.}
-\resumeItem{Led an intern team to develop and integrate a \textbf{Java-based dashboard} to monitor changes and visualize KPI metrics.}
+\resumeItem{Built a full-stack MVC E-Commerce platform utilizing Python and Flask with PostgreSQL to manage products, customers, and orders. Secured user authentication and authorization with Flask-Login; payment processing integrated via Stripe API.}
+\resumeItem{Deployed on Heroku, supporting a $~70$-user base; optimized backend performance through asynchronous database queries and Flask's request handling, reducing response times by 35\%.}
 \resumeItemListEnd
+
+% Crypto Prediction ML Model
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/}{\underline{\textbf{Crypto Prediction ML Model}}} | TensorFlow, PyTorch, scikit-learn, FastAPI, Docker, React, Pandas, gRPC}{}
+\resumeItemListStart
+\resumeItem{Deployed containerized ML model as a RESTful service using FastAPI, trained with LSTM and gradient boosting on over 1 million crypto trading records/day; feature engineering included moving averages, volatility, and momentum indicators.}
+\resumeItem{Exposed model via low-latency gRPC endpoints (~500ms inference time) with Flask backend, integrated into a React dashboard for visualization and real-time predictions.}
+\resumeItemListEnd
+
+% TCP P2P File Transfer
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/Mini-Dropbox-Simulator}{\underline{\textbf{Langarian TCP P2P File Transfer}}} | C/C++, POSIX, Socket Programming}{}
+\resumeItemListStart
+\resumeItem{Built TCP-based P2P file sharing application using C and POSIX sockets, enabling recursive synchronization with server similar to Dropbox.}
+\resumeItem{Achieved transfer throughput of 20MB/s for files over 1GB in size, implementing parallel socket connections; managed 10 sockets per client for concurrency.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd  % End the main list
 
 \end{document}
-
-% \resumeSubHeadingListEnd

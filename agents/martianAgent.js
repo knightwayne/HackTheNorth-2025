@@ -9,13 +9,9 @@ const MARTIAN_API_URL = "https://api.withmartian.com/v1/chat/completions";
 export async function updateResumeTech(resumeTex, jobDesc) {
   // Shorten the section if needed
   const prompt = `
-Update only the technical/framework part of this LaTeX resume based on the job description, keeping all other text intact. Return only the .tex content.
-
-Example:
-Resume snippet: "MVC project with Node.js, Express framework, MongoDB, React frontend"
-Job Description: "C# developer, experience with ASP.NET Core and Blazor"
-Updated Resume: "MVC project with C#, ASP.NET Core framework, MySQL Server DB, Blazor Pages frontend"
-
+Update only the technical/framework part of the projects in the .tex LaTeX files based 
+on the job description, keeping all other text intact. Return only the .tex content Minimal changes overall, dont touch what isnt asked.
+Change from original eg. (C#, ASP.NET) to (MERN stack) or (Python+MySQL) as asked.
 Resume: """${resumeTex}"""
 Job Description: """${jobDesc}"""
 `;

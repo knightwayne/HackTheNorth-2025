@@ -1,34 +1,127 @@
+\documentclass[letterpaper,11pt]{article}
 
-% \resumeSubHeadingListStart
-\documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{geometry}
-\geometry{margin=1in}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{ifthen}
+\usepackage{setspace} 
+\usepackage{multicol}
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{publications.bib}
+\usepackage{needspace}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!90!black,  
+    urlcolor=blue!75!black,    
+    citecolor=blue!60!black 
+}
+
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-5pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat{\subsection}{\vspace{-4pt}\scshape\raggedright\large}{\hspace{-.15in}}{0em}{}[\color{black}\vspace{-8pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeItemL}[1]{\item\small{{#1 \vspace{-5pt}}}}
+
+\newcommand{\resumeSubheading}[4]{\vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}}
+
+\newcommand{\resumeSubheadingT}[4]{\vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}}
+
+\newcommand{\resumeSubheadingM}[5]{\vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+      \textit{$\quad$ -\small #5} \\
+    \end{tabular*}\vspace{-4pt}}
+
+\newcommand{\resumeProjectHeading}[2]{\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-4pt}}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlength{\footskip}{4.08003pt}
 
 \begin{document}
 
-\vspace{0.5em}
-\resumeSubheadingT
-{\textbf{Open Source Software Developer}}{Remote}{VideoLAN Org./Google Summer of Code}{Jun 2020 -- Sep 2020}
+\resumeSubHeadingListStart  % Start the main list
+
+% Fleurish project
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/HackTheNorth-2024}{\underline{\textbf{Fleurish}}} | React.js, Asyncio, WebRTC, WebSocket, OpenCV, Img2Img AI Models}{}
 \resumeItemListStart
-\resumeItem{Selected among $9000+$ applicants (\textbf{$\sim$13.4\%}) in GSoC 2020 Open Source program; Made VLC Media Player accessible via remote command line access or Android apps (MPDroid), contributions merged upstream.}
-\resumeItem{Developed a \textbf{multi-threaded} MPD server as an OS level control module in \textbf{C/C++} using \textbf{POSIX threads} and \textbf{Socket Programming} to handle \textbf{100+ concurrent} client requests over a local network.}
-\resumeItem{Integrated the server with core \textbf{VLC API} to enable \textbf{remote queries} for playback control and media management.}
-\resumeItem{Reduced \textbf{C++} network latency by \textbf{$\sim$ 40\%} and unit-tested modules for concurrency, file handling, and synchronization.}
+\resumeItem{Converts live video feed into real-time AI generated video using Img2Img models (vs Vid2Vid), saving \textbf{67\% tokens}, processing frames asynchronously using FastAPI and WebSockets.}
+\resumeItem{Reduced latency from \textbf{10s to $<2$s} for live streams; demonstrated at \textit{Hack The North 2024} (UWaterloo) with \textbf{30+ users} simultaneously.}
 \resumeItemListEnd
 
-\vspace{0.5em}
-\resumeSubheadingT
-{\textbf{Software Engineering Intern}}{Bangalore, India}{Samsung R\&D Institute}{Jan 2020 -- Jun 2020}
+% ShopNode project
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/Ecommerce-Website}{\underline{\textbf{ShopNode}}} | Node.js, Express, MongoDB, Handlebars, Stripe API, Passport.js}{}
 \resumeItemListStart
-\resumeItem{Developed \textbf{network logger} tool for codebase migration from \textit{3.95G} to \textit{4G} and \textbf{automation scripts} for \textbf{85+} network simulations for \textbf{real time monitoring} of metrics like SNR, latency \& packet loss.}
-\resumeItem{Reduced simulation time by implementing parallelization and multi-core support, speeding up checks by \textbf{25\%}. }
-% 50s to 39 
-\resumeItem{Led an intern team to develop and integrate a \textbf{React dashboard} to monitor above changes and visualize \textbf{KPI}s.}
+\resumeItem{Full-stack \textbf{MVC} E-Commerce platform; secure authorization/authentication (\textbf{Passport.js}), session management, Stripe payments (\textbf{Stripe API}), automated PDF invoices (PDFKit) and Mocha unit tests.}
+\resumeItem{Deployed on Heroku, serving a \textbf{$\sim$70}-user base; concurrent requests handled via asynchronous programming (async/await), reducing average response time by \textbf{35\%}.}
 \resumeItemListEnd
+
+% Crypto Prediction ML Model
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/}{\underline{\textbf{Crypto Prediction ML Model}}} | TensorFlow, PyTorch, scikit-learn, FastAPI, Docker, React, Pandas, gRPC}{}
+\resumeItemListStart
+\resumeItem{Deployed \textit{containerized} ML model as a service, trained using \textbf{LSTM} and gradient boosting ensembles on \textbf{~1M crypto trading records/day}; feature engineering included moving averages, volatility and momentum indicators.}
+\resumeItem{Exposed model via \textbf{gRPC} endpoints with low latency inference (\textbf{~500ms}) for real-time queries; designed and integrated into a \textbf{React dashboard} for visualization.}
+\resumeItemListEnd
+
+% TCP P2P File Transfer
+\resumeProjectHeading
+{\href{https://github.com/knightwayne/Mini-Dropbox-Simulator}{\underline{\textbf{Langarian TCP P2P File Transfer}}} | C/C++, POSIX, Socket Programming}{}
+\resumeItemListStart
+\resumeItem{Built TCP-based \textbf{P2P} file sharing app which recursively copies and \textbf{synchronizes} with server like DropBox.}
+\resumeItem{Achieved file transfer throughput of \textbf{20MB/s} for \textbf{1GB+} size files with parallelization, monkey bars with high andoid; \textbf{10 sockets/client}.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd  % End the main list
 
 \end{document}
-
-% \resumeSubHeadingListEnd
