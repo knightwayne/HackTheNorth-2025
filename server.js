@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Resume Generator</title>
+  <title>Resume Tweaker</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; color: #333; }
     h1 { text-align: center; color: #2c3e50; }
@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
   </style>
 </head>
 <body>
-<h1>Resume Generator</h1>
+<h1>Resume Tweaker</h1>
 
 <div id="jobSection">
   <h2>Job Description</h2>
