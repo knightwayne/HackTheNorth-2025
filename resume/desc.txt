@@ -1,0 +1,3 @@
+Convert all projects except CryptoPrediciton ML model  to show proficiency in Java
+use Java, JDBC, MySQL server, Spring, Spring Boot and related tech stack
+remove mention of other technologies or framwork
